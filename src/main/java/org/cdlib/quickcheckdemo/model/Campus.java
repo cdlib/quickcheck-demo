@@ -26,10 +26,6 @@ public enum Campus {
             return Generate.pick(Arrays.asList(Campus.values()));
         }
         
-        public static Gen<Campus> only(Campus... campuses) {
-            return Generate.pick(Arrays.asList(campuses));
-        }
-        
         public static Gen<Campus> except(Campus... campuses) {
             Set<Campus> kept = EnumSet.allOf(Campus.class);
             kept.removeAll(Arrays.asList(campuses));

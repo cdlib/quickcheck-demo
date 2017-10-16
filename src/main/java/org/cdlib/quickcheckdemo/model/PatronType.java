@@ -18,9 +18,5 @@ public enum PatronType {
         public static Gen<PatronType> all() {
             return Generate.pick(Arrays.asList(PatronType.values()));
         }
-
-        public static Gen<PatronType> only(PatronType... types) {
-            return Generate.pick(Arrays.asList(types));
-        }
     }
 }

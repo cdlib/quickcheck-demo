@@ -20,27 +20,27 @@ public class MyBusinessBeanTest {
     @Test
     public void allFacultyAreEligible() {
         qt()
-                .forAll(Campus.Generator.all(), PatronType.Generator.only(PatronType.Faculty))
-                .check((campus, type)
-                        -> service.isPatronEligibleForCDLService(new Patron(campus, type))
+                .forAll(Campus.Generator.all())
+                .check((campus)
+                        -> service.isPatronEligibleForCDLService(new Patron(campus, PatronType.Faculty))
                 );
     }
 
     @Test
     public void guestsAreNeverEligible() {
         qt()
-                .forAll(Campus.Generator.all(), PatronType.Generator.only(PatronType.Guest))
-                .check((campus, type)
-                        -> !service.isPatronEligibleForCDLService(new Patron(campus, type))
+                .forAll(Campus.Generator.all())
+                .check((campus)
+                        -> !service.isPatronEligibleForCDLService(new Patron(campus, PatronType.Guest))
                 );
     }
 
     @Test
     public void postDocsAreOnlyEligibleAtBerkeley() {
         qt()
-                .forAll(Campus.Generator.except(Campus.UCB), PatronType.Generator.only(PatronType.PostDoc))
-                .check((campus, type)
-                        -> !service.isPatronEligibleForCDLService(new Patron(campus, type))
+                .forAll(Campus.Generator.except(Campus.UCB))
+                .check((campus)
+                        -> !service.isPatronEligibleForCDLService(new Patron(campus, PatronType.PostDoc))
                 );
         assertTrue(service.isPatronEligibleForCDLService(new Patron(Campus.UCB, PatronType.PostDoc)));
     }
