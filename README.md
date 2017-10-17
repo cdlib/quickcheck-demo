@@ -29,6 +29,6 @@ You can clone this repository and run the tests with Maven.
 
 ## Key Terms
 
-* Invariants - properties of a class method that do not change based with changing state, or properties that hold for any set of parameters to a stateless class method.
-* Generators - producers, typically randomized, of parameters or state for test cases. Generators may produce more test cases than are actually run. Randomness can typically be configured for determinism (repeatability) or non-determinism (serendipity).
+* Invariants - properties of a method that do not change with changing object state, or properties that hold for any set of parameters to a stateless method.
+* Generators - producers, typically randomized, of parameters or object state for test cases. Generators may produce more test cases than are actually run at verification. Randomness can typically be configured for determinism (repeatability) or non-determinism (serendipity).
 * Shrinking / Reduction - taking a set of test parameters and attempting to find a simpler, or more general, set of test parameters that achieve the same result, typically a falsification. For example, if `("ABCDEX","YEDCBA")` fails a boolean `palindrome(a, b)` function, then either `("ABC","CBA")` or `("DEX", "YED")` ought to also fail and is a simpler test case.
