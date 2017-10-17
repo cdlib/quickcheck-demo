@@ -2,7 +2,7 @@
 
 ## Motivation
 
-What do "traditional" unit test look like? What are there limitations?
+What do "traditional" unit test look like? What are their limitations?
 
 * [JUnit 5: Parameterized Tests](http://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests)
 
