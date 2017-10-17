@@ -23,7 +23,7 @@ Many popular test frameworks have adopted the ideas suggested by QuickCheck, tho
 ## Demonstration code
 
 This repository demonstrates tests in Java using [QuickTheories](https://github.com/ncredinburgh/QuickTheories).
-The API is easier to work with than traditional JUnit (<=4) theories.
+The API is easier to work with than traditional JUnit (<=4) [theories](http://junit.org/junit4/javadoc/4.12/org/junit/experimental/theories/Theories.html).
 How does it compare to JUnit Jupiter and other test frameworks (e.g. [Spock: Data Driven Testing](http://spockframework.org/spock/docs/1.0/data_driven_testing.html))?
 You can clone this repository and run the tests with Maven.
 
