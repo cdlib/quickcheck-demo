@@ -8,9 +8,9 @@ What do "traditional" unit test look like? What are there limitations?
 
 ## What is QuickCheck?
 
-"QuickCheck" is a testing library originally written in Haskell (ca. 2000).
-QuickCheck now more broadly means to any property based testing tool, though the term has stuck.
-Many popular test frameworks have adopted the ideas suggested by QuickCheck.
+"QuickCheck" is a testing library originally written in Haskell (ca. 2000) and is based on Haskell's type system.
+QuickCheck, a trademarked product, now commonly refers to any property based testing tool, though the term has stuck.
+Many popular test frameworks have adopted the ideas suggested by QuickCheck, though not all rely on type classes / classical inheritance to generate test cases.
 
 * [Wikipedia: QuickCheck](https://en.wikipedia.org/wiki/QuickCheck)
 
@@ -26,3 +26,9 @@ This repository demonstrates tests in Java using [QuickTheories](https://github.
 The API is easier to work with than traditional JUnit (<=4) theories.
 How does it compare to JUnit Jupiter and other test frameworks (e.g. [Spock: Data Driven Testing](http://spockframework.org/spock/docs/1.0/data_driven_testing.html))?
 You can clone this repository and run the tests with Maven.
+
+## Key Terms
+
+* Invariants - properties of a class method that do not change based with changing state, or properties that hold for any set of parameters to a stateless class method.
+* Generators - producers, typically randomized, of parameters or state for test cases. Generators may produce more test cases than are actually run. Randomness can typically be configured for determinism (repeatability) or non-determinism (serendipity).
+* Shrinking / Reduction - taking a set of test parameters and attempting to find a simpler, or more general, set of test parameters that achieve the same result, typically a falsification. For example, if `("ABCDEX","YEDCBA")` fails a boolean `palindrome(a, b)` function, then either `("ABC","CBA")` or `("DEX", "YED")` ought to also fail and is a simpler test case.
